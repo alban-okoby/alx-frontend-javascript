@@ -1,11 +1,11 @@
-export default async function guardrail(mathFunction) {
-  const queue = [];
+export default function guardrail(mathFunction) {
+  const myQueue = [];
   try {
-    queue.push(await mathFunction());
+    myQueue.push(mathFunction());
   } catch (err) {
-    queue.push(err.toString());
+    myQueue.push(err.toString());
   } finally {
-    queue.push('Guardrail was processed');
+    myQueue.push('Guardrail was processed');
   }
   return queue;
 }
